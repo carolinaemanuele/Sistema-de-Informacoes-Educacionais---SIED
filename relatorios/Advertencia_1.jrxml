@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Advertencia" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1f0ac6be-9918-4231-94a0-ebf8a2281231">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Conexao_db_escola"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="id_adv_aluno" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select
+O.data_acontecimento,advertencia,
+I.nome_aluno,sobrenome_aluno,
+S.cidade_escola,codigo_inep,nome_escola
+from adv_aluno as O inner join tb_aluno as I
+on(I.id_aluno = O.id_aluno)
+inner join tb_escola as S 
+on (S.id_escola=S.id_escola)
+where id_adv_aluno = $P{id_adv_aluno}]]>
+	</queryString>
+	<field name="data_acontecimento" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="data_acontecimento"/>
+		<property name="com.jaspersoft.studio.field.label" value="data_acontecimento"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="adv_aluno"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="advertencia" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="advertencia"/>
+		<property name="com.jaspersoft.studio.field.label" value="advertencia"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="adv_aluno"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nome_aluno" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nome_aluno"/>
+		<property name="com.jaspersoft.studio.field.label" value="nome_aluno"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_aluno"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="sobrenome_aluno" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="sobrenome_aluno"/>
+		<property name="com.jaspersoft.studio.field.label" value="sobrenome_aluno"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_aluno"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cidade_escola" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="cidade_escola"/>
+		<property name="com.jaspersoft.studio.field.label" value="cidade_escola"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_escola"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="codigo_inep" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="codigo_inep"/>
+		<property name="com.jaspersoft.studio.field.label" value="codigo_inep"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_escola"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nome_escola" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nome_escola"/>
+		<property name="com.jaspersoft.studio.field.label" value="nome_escola"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_escola"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="285" splitType="Stretch">
+			<textField>
+				<reportElement x="70" y="150" width="142" height="20" uuid="6d9cfcb8-f05f-4125-b372-ad239ac58f6f"/>
+				<textElement>
+					<font size="14" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nome_aluno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="79" y="250" width="201" height="20" uuid="303cfbe6-160b-4d98-bccd-0989a23b6b45"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{data_acontecimento}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="150" width="70" height="20" uuid="15a697ff-a32d-4a40-891b-f2f8f4deb455"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[O aluno(a)                ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="170" width="180" height="20" uuid="1afd7716-e54b-4eb6-a2d9-6dbd0bc63a7d"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[matriculado(a) na turma do]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="190" width="550" height="19" uuid="154e9fdd-f10a-4a04-85cc-a5f2f52053fa"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[recebe neste ato a pena de advertência disciplinar em razão de desrespeito a funcioná-]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="210" width="550" height="20" uuid="aa6caf55-e616-4053-9192-fdf82431c5a9"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[rio e normas da escola. Informamos que a repetição de condutas repreensíveis poderá]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="230" width="549" height="20" uuid="996cae47-ae43-474a-acfb-1f2cec15191a"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[originar uma dispensa por justa causa conforme legislação vigente.
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="250" width="79" height="20" uuid="508bc12a-953b-4567-92ba-5c72b3933968"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Na data de :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="212" y="150" width="337" height="20" uuid="d5f560cd-2a60-4320-a8ef-fa39242d39c0"/>
+				<textElement>
+					<font size="14" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sobrenome_aluno}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="161" y="90" width="239" height="30" uuid="985f914f-bf72-4fe3-aea5-d1d5aa1535d5"/>
+				<textElement>
+					<font size="22" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Termo de advertência]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="15" width="212" height="30" uuid="b0acf040-3e85-4259-9bbe-da4cdf3003b8"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nome_escola}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="45" width="212" height="25" uuid="56e1c812-fb70-4db4-a7cb-c80293c9e3fe"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{codigo_inep}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="365" splitType="Stretch">
+			<staticText>
+				<reportElement x="212" y="142" width="130" height="30" uuid="d4c046a6-8652-4f20-9a03-d5c16a866530"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Assinatura do aluno(a)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="180" y="243" width="196" height="30" uuid="7ee6d897-d5d4-4c46-a1d6-f95a6e6292b7"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Assinatura do(a) responsável pelo aluno]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="192" y="335" width="170" height="30" uuid="35c14acd-69bf-46e5-a685-7908b3af2079"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Assinatura do(a) gestor(a) escolar]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="310" width="400" height="25" uuid="1a944bec-416c-442f-b2c7-1f45b7c80102"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[____________________________________________________
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="210" width="400" height="30" uuid="fa61a516-d641-4c37-85d0-6b6912c99c35"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[____________________________________________________
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="110" width="400" height="30" uuid="5de8c466-e692-4d8b-bfbf-cb9f39d6bfd5"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[____________________________________________________
+]]></text>
+			</staticText>
+			<textField pattern="yyyy">
+				<reportElement x="230" y="50" width="100" height="30" uuid="afd5210c-7496-47ba-b2a0-8daa02e0fa47"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="23" width="376" height="27" uuid="6f4f8ae9-9e4b-470a-a768-a4c4eacab815"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cidade_escola}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="15" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="16" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="13" splitType="Stretch"/>
+	</summary>
+</jasperReport>

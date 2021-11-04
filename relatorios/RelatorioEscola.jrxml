@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RelatorioEscola" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="acdfe641-5ba8-4157-ac84-996a3398f441">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Conexao_db_escola"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<queryString>
+		<![CDATA[select
+E.nome_escola,
+P.nome_prof,sobrenome_prof,
+A.nome_aluno,sobrenome_aluno,
+T.nome_turma
+from tb_escola as E inner join tb_turma as T
+inner join tb_aluno as A inner join tb_professor as P
+on(P.id_prof = A.id_prof)
+on(P.id_turma = T.id_turma)]]>
+	</queryString>
+	<field name="nome_escola" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nome_escola"/>
+		<property name="com.jaspersoft.studio.field.label" value="nome_escola"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_escola"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nome_prof" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nome_prof"/>
+		<property name="com.jaspersoft.studio.field.label" value="nome_prof"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_professor"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="sobrenome_prof" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="sobrenome_prof"/>
+		<property name="com.jaspersoft.studio.field.label" value="sobrenome_prof"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_professor"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nome_aluno" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nome_aluno"/>
+		<property name="com.jaspersoft.studio.field.label" value="nome_aluno"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_aluno"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="sobrenome_aluno" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="sobrenome_aluno"/>
+		<property name="com.jaspersoft.studio.field.label" value="sobrenome_aluno"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_aluno"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nome_turma" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nome_turma"/>
+		<property name="com.jaspersoft.studio.field.label" value="nome_turma"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_turma"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="124" splitType="Stretch">
+			<staticText>
+				<reportElement x="161" y="20" width="232" height="40" uuid="18c3e8e4-7a2e-4c68-b1ee-df0fa4525962"/>
+				<textElement>
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Relatório da Escola]]></text>
+			</staticText>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="450" y="10" width="100" height="30" uuid="7c372f52-c707-4d30-9d47-ccf467c4d2a6"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="40" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="50" height="30" uuid="64050890-117e-455a-b19c-14d59d52707a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="327656ee-2d40-48ce-a5db-ec6892a14d7f"/>
+				</reportElement>
+				<textElement>
+					<font size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Escola]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="90" y="0" width="100" height="30" uuid="54f2c1f9-58bd-47d4-b7da-ae096d716369">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4a39a579-0b51-4c92-93e0-0b95845c7445"/>
+				</reportElement>
+				<textElement>
+					<font size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Professor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="290" y="0" width="100" height="30" uuid="9673a73c-bcf8-4271-9959-00fee4ee9fee">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1c768040-ac64-4163-9ce8-fb775a032d73"/>
+				</reportElement>
+				<textElement>
+					<font size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Aluno]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="470" y="0" width="80" height="30" uuid="146592eb-3d13-4c97-ad94-6a55a694fdc3">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1cfcda34-a2c8-4348-a05c-2f20ad30f05a"/>
+				</reportElement>
+				<textElement>
+					<font size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Turma]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="50" height="30" uuid="1f5bca61-e02d-4c98-95ed-ba4e8537961c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="327656ee-2d40-48ce-a5db-ec6892a14d7f"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{nome_escola}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="90" y="0" width="60" height="30" uuid="8410946d-e0af-45de-9dbe-ac9d92c10980">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4a39a579-0b51-4c92-93e0-0b95845c7445"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{nome_prof}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="150" y="0" width="90" height="30" uuid="85a96e71-af7e-4abf-836d-f1df3f188c1c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="29a35dc4-5df2-4267-b1ba-4ce32b108791"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{sobrenome_prof}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="290" y="0" width="70" height="30" uuid="268b0a7e-370c-42a2-85c4-8936454753e0">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1c768040-ac64-4163-9ce8-fb775a032d73"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{nome_aluno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="360" y="-2" width="100" height="30" uuid="c2123f6a-5141-40f7-a433-c9ea6557e24c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ea94ba83-075c-4508-9277-cd26c9424e8f"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{sobrenome_aluno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="470" y="-2" width="80" height="30" uuid="d23a5726-8655-493a-9b12-96aa2d9c99a6">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1cfcda34-a2c8-4348-a05c-2f20ad30f05a"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{nome_turma}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="60" splitType="Stretch">
+			<textField>
+				<reportElement x="450" y="30" width="100" height="30" uuid="2b88ed29-cf68-406d-b480-c97859ed1fc1"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

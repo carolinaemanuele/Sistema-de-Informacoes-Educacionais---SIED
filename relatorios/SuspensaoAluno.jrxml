@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="SuspensaoAluno" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="18f75810-c891-400e-a71b-3ed3c15d77fa">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Conexao_db_escola"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="id_sup_aluno" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select
+O.motivos,data_acontecimento,suspensao,data_inicio_susp,data_fim_susp,
+S.nome_escola,cidade_escola,codigo_inep
+from susp_aluno as O 
+inner join tb_escola as S
+on(S.id_escola = S.id_escola)
+where id_sup_aluno = $P{id_sup_aluno}]]>
+	</queryString>
+	<field name="motivos" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="motivos"/>
+		<property name="com.jaspersoft.studio.field.label" value="motivos"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="susp_aluno"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="data_acontecimento" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="data_acontecimento"/>
+		<property name="com.jaspersoft.studio.field.label" value="data_acontecimento"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="susp_aluno"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="suspensao" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="suspensao"/>
+		<property name="com.jaspersoft.studio.field.label" value="suspensao"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="susp_aluno"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="data_inicio_susp" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="data_inicio_susp"/>
+		<property name="com.jaspersoft.studio.field.label" value="data_inicio_susp"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="susp_aluno"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="data_fim_susp" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="data_fim_susp"/>
+		<property name="com.jaspersoft.studio.field.label" value="data_fim_susp"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="susp_aluno"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nome_escola" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nome_escola"/>
+		<property name="com.jaspersoft.studio.field.label" value="nome_escola"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_escola"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cidade_escola" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="cidade_escola"/>
+		<property name="com.jaspersoft.studio.field.label" value="cidade_escola"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_escola"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="codigo_inep" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="codigo_inep"/>
+		<property name="com.jaspersoft.studio.field.label" value="codigo_inep"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_escola"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="147" splitType="Stretch">
+			<staticText>
+				<reportElement x="154" y="90" width="254" height="30" uuid="378dbbaa-e344-4a03-a691-1781f500c598"/>
+				<textElement textAlignment="Center">
+					<font size="22" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Termo de suspensão]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="13" width="220" height="27" uuid="6f3d50c2-c75d-480c-ae0c-973090481f9e"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nome_escola}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="40" width="220" height="23" uuid="c582fdac-7f1c-42a1-be33-3083a0bcee07"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{codigo_inep}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="12" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="460" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="120" height="20" uuid="3636dfdf-276d-4377-afad-1cdeb673f94f"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[A administração ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="20" width="550" height="20" uuid="01f90cc5-ec37-4c84-9b67-4db986feb446"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[por medida disciplinar, tendo em vista o ato inadequado praticado pelo(a) aluno(a) no ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="40" width="20" height="20" uuid="030b8a46-7250-46da-9d7b-f2696a769dfa"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[dia]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="120" y="40" width="430" height="20" uuid="318385e5-487a-438f-8759-cfb0eccb89d5"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[deliberamos aplicar-lhe a pena de suspensão, a qual terá início no]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="60" width="30" height="20" uuid="f41b037d-e1a7-47a1-aaf4-871251b1820e"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[dia]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="120" y="60" width="140" height="20" uuid="5f4f0587-7008-4a34-907b-f7f49db47dc8"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[e terminará no dia ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="340" y="60" width="21" height="20" uuid="cad2b502-084d-4be1-8854-bb8e2075dcfb"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="81" y="220" width="400" height="19" uuid="2a35e1b7-4275-4464-b822-61b493be9c7a"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[____________________________________________________
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="210" y="240" width="150" height="20" uuid="64b479aa-fd56-4f22-88a2-ba684f63ce8e"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Assinatura do aluno(a)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="82" y="320" width="402" height="21" uuid="05f35164-2a85-43a0-9735-c09e109c5465"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[____________________________________________________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="150" y="341" width="259" height="20" uuid="592f9a4a-2b5f-4f20-9850-467ac9b44e79"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Assinatura do(a) responsável pelo aluno]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="171" y="440" width="220" height="20" uuid="139b4d2c-514b-4e8e-aa71-2968483a014e"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Assinatura do(a) gestor(a) escolar]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="82" y="420" width="398" height="25" uuid="c6ab7155-efd8-4f60-9c27-9e24328af933"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[___________________________________________________]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="120" y="0" width="430" height="20" uuid="93dec228-b7b6-4fac-91b9-cc923d42b5e7"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nome_escola}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="30" y="40" width="90" height="19" uuid="9fb4c637-3209-4b26-93d0-4f84a599a2ca"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{data_acontecimento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="30" y="60" width="90" height="20" uuid="e822a549-79a7-4400-9170-4e3f8e7ae59f"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{data_inicio_susp}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="260" y="60" width="80" height="20" uuid="29cb03fd-127c-4cfa-90f8-d341ddd14882"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{data_fim_susp}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="99" y="120" width="356" height="20" uuid="80212300-8101-4ebb-9c1f-390215765958"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cidade_escola}]]></textFieldExpression>
+			</textField>
+			<textField pattern="yyyy">
+				<reportElement x="231" y="140" width="100" height="30" uuid="106a6b08-6b4c-44e0-bcfb-8ce55da2b359"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="44" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="60" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
